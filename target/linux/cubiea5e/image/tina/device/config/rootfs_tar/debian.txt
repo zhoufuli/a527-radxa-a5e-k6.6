@@ -1,0 +1,7 @@
+debian notice:
+
+step 1: download or customize your rootfs here, name xxx(what you want)
+
+step 2: set var 'LICHEE_ROOTFS=xxx' in file: device/configs/${BOARD_xxx}/debian/BoardConfig.mk
+
+step 3: build img and enjoy yourself

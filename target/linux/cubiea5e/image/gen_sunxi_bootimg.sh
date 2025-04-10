@@ -4,8 +4,8 @@
 # Copyright (C) 2013 OpenWrt.org
 
 set -ex
-[ $# -eq 3 ] || {
-    echo "SYNTAX: $0 <file> <kernel Image> <System Map>"
+[ $# -eq 4 ] || {
+    echo "SYNTAX: $0 <file> <kernel Image> <System Map> <DTB>"
     exit 1
 }
 
@@ -13,6 +13,7 @@ set -ex
 OUTPUT="$1"
 BIMAGE="$2"
 SYSMAP="$3"
+SUXIDTB="$4"
 
 BASE="0x40000000"
 KERNEL_OFFSET="0x80000"
@@ -48,7 +49,7 @@ mkbootimg --kernel ${BIMAGE} \
         --board sun55i_arm64 \
         --base ${BASE} \
         --kernel_offset ${KERNEL_OFFSET} \
-        --dtb ./sunxi-uboot/sunxi-ex.dtb \
+	--dtb ${SUXIDTB} \
         --dtb_offset ${DTB_OFFSET} \
         --header_version 2 \
         -o ${OUTPUT}
