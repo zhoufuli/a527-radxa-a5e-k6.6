@@ -10,6 +10,7 @@ DEVICE_VARS += UBOOT_DEVICE_NAME
 # due to the lack of some functions in official u-boot now and some private data cannot't be decrypted so we just generate the files for lichee
 define Build/syterkit-img
 	./buildserver_start.sh $(PWD)/image
+	echo "arisc" > $(PWD)/image/tina/out/a527/cubie_a5e/buildroot/arisc
 	./pack_vmlinux.sh $(LINUX_DIR)
 	cp $(DTS_DIR)/allwinner/sun55i-radxa-cubie-a5e.dtb ./tina/out/a527/cubie_a5e/buildroot/sunxi.dtb
 

@@ -87,6 +87,8 @@ export LICHEE_POSSIBLE_BIN_PATH="bin /bin configs/cubie_a5e/bin configs/cubie_a5
 EOF
 
 echo ".buildconfig 文件已创建在 $CFG_TOP_DIR/tina/.buildconfig" 
+cp $CFG_TOP_DIR/tina/.buildconfig $CFG_TOP_DIR/tina/out/a527/cubie_a5e/buildroot
+echo ".buildconfig 复制到 $CFG_TOP_DIR/tina/out/a527/cubie_a5e/buildroot/.buildconfig"
 
 pidlist=($(lsof 2>/dev/null | awk -v path="$CFG_TOP_DIR/tina/tools/build/buildserver" '$9 ~ path {print $2}'))
 

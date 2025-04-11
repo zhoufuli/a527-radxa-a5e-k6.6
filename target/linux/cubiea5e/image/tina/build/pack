@@ -644,9 +644,12 @@ function do_prepare()
 		cp ${LICHEE_PACK_OUT_DIR}/boot-resource/bootlogo.bmp ${LICHEE_PACK_OUT_DIR}/bootlogo.bmp
 	fi
 	echo "start lzma -k *.bmp need lzma > 5.0"
-	/usr/bin/lzma -k ${LICHEE_PACK_OUT_DIR}/bootlogo.bmp
-	/usr/bin/lzma -k ${LICHEE_PACK_OUT_DIR}/bempty.bmp
-	/usr/bin/lzma -k ${LICHEE_PACK_OUT_DIR}/battery_charge.bmp
+	#lzma -k ${LICHEE_PACK_OUT_DIR}/bootlogo.bmp
+	#lzma -k ${LICHEE_PACK_OUT_DIR}/bempty.bmp
+	#lzma -k ${LICHEE_PACK_OUT_DIR}/battery_charge.bmp
+        lzma e ${LICHEE_PACK_OUT_DIR}/bootlogo.bmp ${LICHEE_PACK_OUT_DIR}/bootlogo.bmp.lzma
+        lzma e ${LICHEE_PACK_OUT_DIR}/bempty.bmp ${LICHEE_PACK_OUT_DIR}/bempty.bmp.lzma
+        lzma e ${LICHEE_PACK_OUT_DIR}/battery_charge.bmp ${LICHEE_PACK_OUT_DIR}/battery_charge.bmp.lzma
 
 	if [ -f ${LICHEE_PACK_OUT_DIR}/bootlogo.bmp.lzma ]; then
 		add_lzma_header "${LICHEE_PACK_OUT_DIR}/bootlogo.bmp.lzma" "${LICHEE_PACK_OUT_DIR}/bootlogo.bmp"
