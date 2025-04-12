@@ -1,0 +1,19 @@
+# Object files
+.*
+!.gitignore
+*.o
+*.a
+*.dep
+*.swp
+*.swo
+*.patch
+
+# lib
+!libsunxicheck.a
+
+#Build & install directories
+build/
+install/
+
+# Development friendly files
+tags

@@ -9,6 +9,9 @@ include $(INCLUDE_DIR)/kernel.mk
 DEVICE_VARS += UBOOT_DEVICE_NAME
 # due to the lack of some functions in official u-boot now and some private data cannot't be decrypted so we just generate the files for lichee
 define Build/syterkit-img
+	(cp $(PWD)/image/tina/device/config/chips/a527/configs/cubie_a5e/arisc.config $(PWD)/image/tina/brandy/arisc/.config &&  \
+	       make -C $(PWD)/image/tina/brandy/arisc && cp $(PWD)/image/tina/brandy/arisc/ar100s/scp.bin $(PWD)/image/tina/device/config/chips/a527/bin )
+	(cd ./tina/brandy/brandy-2.0/ && ./build.sh -p sun55iw3p1 -b a527)
 	./buildserver_start.sh $(PWD)/image
 	echo "arisc" > $(PWD)/image/tina/out/a527/cubie_a5e/buildroot/arisc
 	./pack_vmlinux.sh $(LINUX_DIR)
