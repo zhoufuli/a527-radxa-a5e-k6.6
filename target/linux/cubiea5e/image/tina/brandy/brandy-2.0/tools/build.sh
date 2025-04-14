@@ -13,7 +13,7 @@ UBOOT_NAME=""   # eg: u-boot-2023
 UBOOT_DIR=""
 UBOOT_VER=""
 UBOOT_ARCH=""
-UBOOT_BUILD_FLAG=""   # eg: UC=arm64
+UBOOT_BUILD_FLAG="CROSS_COMPILE=$TOP_DIR/tools/toolchain/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-"   # eg: UC=arm64
 UBOOT_BSP_DIR="$TOP_DIR/u-boot-bsp"
 UBOOT_CONFIGS_PRE_DIR="configs"
 UBOOT_DTB_NAME=""
