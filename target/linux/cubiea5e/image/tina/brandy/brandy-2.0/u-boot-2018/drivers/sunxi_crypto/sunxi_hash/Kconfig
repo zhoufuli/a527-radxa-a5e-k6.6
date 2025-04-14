@@ -1,4 +1,0 @@
-config SUNXI_HASH_SOFTWARE
-	bool "sunxi hash software calculation"
-	depends on SHA256
-	default n

@@ -1,3 +1,0 @@
-config XTENSA_DSP
-	bool "Support Xtensa DSP"
-	default n

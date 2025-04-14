@@ -1,7 +1,0 @@
-menu "sunxi NSI support"
-
-config SUNXI_NSI_DRV
-	bool "support sunxi nsi"
-	default n
-
-endmenu

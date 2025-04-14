@@ -1,6 +1,0 @@
-config CPU_C906
-	bool "C906 riscv cpu"
-	help
-	  Run U-Boot on C906 platforms .
-
-
